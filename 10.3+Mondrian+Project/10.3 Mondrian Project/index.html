@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mondrian Project</title>
+  <style>
+    /* 
+    Write your CSS here 
+    Gap Colour: #000
+    White: #F0F1EC
+    Red: #E72F24
+    Black: #232629
+    Blue: #004592
+    Yellow: #F9D01E
+
+    For dimensions, see dimensions.png image.
+    HINT: Remember you can't change the properties of grid lines.
+    But grid lines are transparent!
+    */
+
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 748px;
+      height: 748px;
+      background-color: rgb(0, 0, 0);
+
+    }
+
+    .child-con {
+      display: grid;
+      width: 748px;
+      height: 748px;
+      grid-template-rows: 414px 130px 155px 22px;
+      grid-template-columns: 320px 198px 153px 50px;
+      gap: 9px;
+    }
+
+    .white {
+      background-color: #F0F1EC;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .blue {
+      background-color: #004592;
+      border-bottom: 10px solid black;
+    }
+
+    .span2-clm {
+      grid-column: span 2;
+    }
+
+    .span3-clm {
+      grid-column: span 3;
+    }
+
+    .spn2-row {
+      grid-row: span 2;
+    }
+
+    .yellow {
+      background-color: yellow;
+    }
+
+    .black {
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Write your HTML here -->
+  <div class="container">
+    <div class="child-con">
+      <Div class="white red"></Div>
+      <Div class="white span3-clm"></Div>
+      <Div class="white spn2-row"></Div>
+      <Div class="white span2-clm spn2-row"></Div>
+      <Div class="white blue "></Div>
+      <Div class="white spn2-row"></Div>
+      <Div class="white "></Div>
+      <Div class="white yellow"></Div>
+      <Div class="white black"></Div>
+    </div>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://appbrewery.github.io/bootstrap-layout/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Layout Exercises</title>
+  <link href="./Bootstrap Layout Exercises_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <style>
+    body {
+      margin-top: 50px;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .flex-container {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      margin-top: 50px;
+      border-bottom: 50px solid transparent;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      resize: vertical;
+      font-family: monospace;
+      background-color: #ddd;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #4285f4;
+      color: white;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .parent {
+      width: 80%;
+      background-color: #ddd;
+      padding: 20px;
+      margin: 2rem;
+    }
+
+    .child {
+      background-color: seagreen;
+      color: white;
+      font-size: 18px;
+      padding: 20px;
+      border: 2px solid white;
+    }
+
+    .test-parent {
+      width: 80%;
+      background-color: #ddd;
+      padding: 20px;
+      margin: 2rem;
+    }
+
+    .test-parent>*>* {
+      background-color: darkviolet;
+      color: white;
+      font-size: 18px;
+      padding: 20px;
+      border: 2px solid goldenrod;
+    }
+
+    .test2 {
+      background-color: salmon;
+      color: white;
+      font-size: 18px;
+      padding: 20px;
+      border: 2px solid white;
+    }
+
+    .solution2>*>* {
+      background-color: cadetblue;
+      color: white;
+      font-size: 18px;
+      padding: 20px;
+      border: 2px solid white;
+    }
+
+    .test3 {
+      background-color: royalblue;
+      color: white;
+      font-size: 18px;
+      padding: 20px;
+      border: 2px solid white;
+    }
+
+    .solution3>*>* {
+      background-color: darkslategrey;
+      color: white;
+      font-size: 18px;
+      padding: 20px;
+      border: 2px solid white;
+    }
+  </style>
+<style type="text/css">
+        #dse-quicksearchdiv * {
+            box-sizing: content-box;
+        }
+
+        #dse-quicksearchdiv svg {
+            box-sizing: content-box;
+        }
+
+        #dse-disabledpopup * {
+            box-sizing: content-box;
+        }
+
+        #dse-search:before {
+            left: -4px !important;
+            top: 38% !important;
+            height: 6px !important;
+            width: 6px !important;
+            border: 1px solid #484644 !important;
+            border-right: none !important;
+            border-top: none !important;
+            content: ' ' !important;
+            background: #484644 !important;
+            position: absolute !important;
+            transform: rotate(45deg) !important;
+        }
+
+        #dse-disabledpopup:before {
+            left: -4px !important;
+            top: 38% !important;
+            height: 6px !important;
+            width: 6px !important;
+            border: 1px solid #484644 !important;
+            border-right: none !important;
+            border-top: none !important;
+            content: ' ' !important;
+            background: #484644 !important;
+            position: absolute !important;
+            transform: rotate(45deg) !important;
+        }
+
+        .topArrow #dse-search:before {
+            left: 50% !important;
+            top: -4px !important;
+            height: 6px !important;
+            width: 6px !important;
+            border: 1px solid #484644 !important;
+            border-top: none !important;
+            border-left: none !important;
+            content: ' ' !important;
+            background: #484644 !important;
+            position: absolute !important;
+            transform: rotate(225deg) !important;
+        }
+
+        .topArrow #dse-disabledpopup:before {
+            left: 50% !important;
+            top: -4px !important;
+            height: 6px !important;
+            width: 6px !important;
+            border: 1px solid #484644 !important;
+            border-top: none !important;
+            border-left: none !important;
+            content: ' ' !important;
+            background: #484644 !important;
+            position: absolute !important;
+            transform: rotate(225deg) !important;
+        }
+
+        #dse-disabledpopup:hover:before,
+        #dse-search:hover:before,
+        #dse-moreoptions:hover,
+        #dse-search:hover,
+        #dse-copy:hover,
+        #dse-disabledpopup:hover,
+        #dse-lookup:hover,
+        #dse-disableFeature:hover {
+            background-color: #666 !important;
+        }
+
+        #dse-disabledpopup:active:before,
+        #dse-search:active:before,
+        #dse-moreoptions:active,
+        #dse-search:active,
+        #dse-copy:active,
+        #dse-disabledpopup:active,
+        #dse-lookup:active,
+        #dse-disableFeature:active {
+            background-color: #666 !important;
+        }
+    </style></head>
+
+<body>
+  <h1>Bootstrap Layout Exercise</h1>
+
+  <div class="flex-container">
+    <h2>Exercise 1</h2>
+    <div class="container parent">
+      <div class="row">
+        <div class="col-xl-6 child">50% desktop, 100% mobile</div>
+        <div class="col-xl-6 child">50% desktop, 100% mobile</div>
+      </div>
+    </div>
+    <div class="container test-parent" id="test1"><!-- Modify the HTML code for the purple boxes below so it behaves like the green ones. -->
+  <div class="row">
+    <div class="col-sm-6 ">50% desktop, 100% mobile</div>
+    <div class="col-sm-6 ">50% desktop, 100% mobile</div>
+  </div>
+  
+    </div>
+    <div class="container">
+      <textarea id="test-1-code" placeholder="Write your CSS code here..." rows="5">&lt;!-- Modify the HTML code for the purple boxes below so it behaves like the green ones. --&gt;
+  &lt;div class="row"&gt;
+    &lt;div class=""&gt;50% desktop, 100% mobile&lt;/div&gt;
+    &lt;div class=""&gt;50% desktop, 100% mobile&lt;/div&gt;
+  &lt;/div&gt;
+  
+    </textarea>
+    </div>
+
+    <button onclick="applyTest1()">Apply Changes</button>
+
+    <script>
+      function applyTest1() {
+        const userCss = document.getElementById('test-1-code').value;
+        const test1 = document.getElementById('test1');
+        test1.innerHTML = userCss;
+      }
+    </script>
+  </div>
+
+  <div class="flex-container">
+    <h2>Exercise 2</h2>
+    <div class="container parent">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 col-10 child test2">Column 1</div>
+        <div class="col-lg-3 col-sm-6 col-10 child test2">Column 2</div>
+        <div class="col-lg-3 col-sm-6 col-10 child test2">Column 3</div>
+      </div>
+    </div>
+    <div class="container test-parent  solution2" id="test2">  <!-- Modify the HTML below to make the blue boxes behave like the red ones. -->
+  <div class="row ">
+    <div class="col-lg-6 col-sm-12 col-10">Column 1</div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-10">Column 2</div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-10">Column 3</div>
+  </div>
+      
+        </div>
+    <div class="container">
+      <textarea id="test-2-code" rows="5">  &lt;!-- Modify the HTML below to make the blue boxes behave like the red ones. --&gt;
+  &lt;div class="row"&gt;
+    &lt;div class=""&gt;Column 1&lt;/div&gt;
+    &lt;div class=""&gt;Column 2&lt;/div&gt;
+    &lt;div class=""&gt;Column 3&lt;/div&gt;
+  &lt;/div&gt;
+      
+        </textarea>
+    </div>
+
+    <button onclick="applyTest2()">Apply Changes</button>
+
+    <script>
+      function applyTest2() {
+        const userCss = document.getElementById('test-2-code').value;
+        const test1 = document.getElementById('test2');
+        test1.innerHTML = userCss;
+      }
+    </script>
+  </div>
+  <div class="flex-container">
+    <h2>Exercise 3</h2>
+    <div class="container parent">
+      <div class="row">
+        <div class="col-xxl-1 col-xl-2 col-lg-4 col-md-6 col-sm-12 child test3">Column 1</div>
+        <div class="col-xxl-11 col-xl-10 col-lg-8 col-md-6 col-sm-12 child test3">Column 2</div>
+      </div>
+    </div>
+    <div class="container test-parent  solution3" id="test3">      <!-- Modify the HTML below to make the indigo boxes behave like the blue ones. -->
+      <div class="row">
+        <div class="col-xxl-1 col-xl-2 col-lg-4 col-md-6">Column 1</div>
+        <div class="col-xxl-11 col-xl-10 col-lg-8 col-md-6">Column 2</div>
+      </div>
+          
+            </div>
+    <div class="container">
+      <textarea id="test-3-code" rows="5">      &lt;!-- Modify the HTML below to make the indigo boxes behave like the blue ones. --&gt;
+      &lt;div class="row"&gt;
+        &lt;div class=""&gt;Column 1&lt;/div&gt;
+        &lt;div class=""&gt;Column 2&lt;/div&gt;
+      &lt;/div&gt;
+          
+            </textarea>
+    </div>
+
+    <button onclick="applyTest3()">Apply Changes</button>
+
+    <script>
+      function applyTest3() {
+        const userCss = document.getElementById('test-3-code').value;
+        const test1 = document.getElementById('test3');
+        test1.innerHTML = userCss;
+      }
+    </script>
+  </div>
+
+
+
+<div id="dse-quicksearch" style="position: fixed; z-index: 10000; display: none;">
+    <div id="dse-disabledpopup" style="cursor: pointer;display: block;position: relative;width: fit-content;padding: 8px;line-height: 16px;border: 1px solid #666;border-radius: 6px;background-color: #484644;font-style: normal;font-weight: normal;color:  #fff;font-size: 13px;font-family: Roboto,Arial,Helvetica,sans-serif;box-shadow: 0px 3px 4px 0px rgba(0,0,0,.14);">
+        <span style="
+            float: left;
+            padding: 0px 12px 0px 4px;
+            ">
+            You've turned off quick searches.
+        </span>
+        <span id="dse-undo" style="padding: 0px 4px 0px 8px;">
+            <span style="
+               width: 15px;
+               height: 15px;
+               float: left;
+               ">
+                <svg enable-background="new 0 0 16 16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m14.259 2.75c-1.159-1.16-2.688-1.744-4.207-1.743-1.52-.001-3.049.583-4.208 1.743l-2.843 2.827v-2.57c0-.552-.448-1-1-1h-.016c-.552 0-.984.448-.984 1v5c0 .552.432.993.984.993h5.016c.552 0 1-.441 1-.993s-.448-1-1-1h-2.601l2.859-2.843c.774-.773 1.779-1.156 2.793-1.157 1.014.001 2.019.384 2.793 1.157.772.774 1.155 1.778 1.156 2.793-.001 1.014-.384 2.019-1.157 2.793l-4.543 4.543c-.391.391-.391 1.024 0 1.414.391.391 1.024.391 1.414 0l4.543-4.543c1.16-1.159 1.743-2.688 1.742-4.207.002-1.52-.582-3.048-1.741-4.207z" fill="#fff"></path>
+                    <path d="m0 0h16v16h-16z" fill="none"></path>
+                </svg>
+            </span>
+            Undo
+        </span>
+    </div>
+    <div id="dse-quicksearchdiv" style="display: inline-block;position: relative;height: 32px;border: 1px solid #666;border-radius: 6px;background-color: #484644; font-style: normal;font-weight: normal;color:  #fff;font-size: 13px;font-family: Roboto,Arial,Helvetica,sans-serif;box-shadow: 0px 3px 4px 0px rgba(0,0,0,.14);">
+        <div id="dse-search" style="border-radius: 5px 0px 0px 5px;height:-webkit-fill-available;height:-moz-fit-content;float: left;line-height: 15px;text-align: center;cursor: pointer;box-sizing: border-box;">
+            <span style="
+               float: left;
+               padding: 8px 12px 8px 8px;
+               height: -webkit-fill-available;
+               ">
+                Web
+                search
+            </span>
+        </div>
+        <div style="        border-left: 1px solid #D2D0CE;
+            float: left;
+            margin: 0px;
+            top: 0;
+            height: 32px;
+            "></div>
+        <div style="height:-webkit-fill-available;height:-moz-fit-content;float: left;padding: 8px 12px 8px 12px;line-height: 15px;text-align: center;cursor: pointer;" id="dse-copy">
+            Copy
+        </div>
+        <div style="        border-left: 1px solid #D2D0CE;
+            height: 32px;
+            float: left;
+            margin: 0px;
+            top: 0;
+            "></div>
+        <div id="dse-moreoptions" style="border-radius: 0px 5px 5px 0px;height:-webkit-fill-available;height:-moz-fit-content;width: 16px;float: left;padding: 8PX 8px 0px 8px;text-align: center; cursor: pointer;position: relative;">
+            <span style="width: 16px;">
+                <svg enable-background="new 0 0 16 16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m1.5 6.5c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5zm6.5 0c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5zm6.5 0c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5z" fill="#fff"></path>
+                    <path d="m0 0h16v16h-16z" fill="none"></path>
+                </svg>
+            </span>
+        </div>
+        <div>
+            <span style="width: 160px;border: 1px solid #666;border-radius: 6px;position: absolute;top: 40px;left: 105px;box-shadow: 0px 3px 4px 0px rgba(0,0,0,.14);background-color: #484644;overflow: hidden;" id="dse-popup">
+                <div style="padding: 8px 12px;line-height: 15px;font-size: 13px;cursor: pointer;text-align: left;" id="dse-lookup">
+                    Define
+                </div>
+                <hr style="        border: 0.5px solid #D2D0CE;
+                  margin: 0;
+                  cursor: default;
+                  height: 0px;
+                  background-color: #3b3a39;">
+                <div style="padding: 8px 12px;line-height: 15px;font-size: 13px;cursor: pointer;text-align: left;" id="dse-disableFeature">
+                    Turn off quick searches
+                </div>
+            </span>
+        </div>
+    </div>
+
+
+</div></body></html>

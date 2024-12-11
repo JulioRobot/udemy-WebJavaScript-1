@@ -1,0 +1,27 @@
+/* Write your code here: */
+/* Group */
+h1,h2{
+    color: blueviolet;
+}
+
+/* parent target direct child*/
+.box > p
+{
+    color: firebrick;
+}
+
+/* keturunan semua yang dibawahnya*/
+.box li{
+    color: blue;
+}
+
+/*Chaining = Apply where All Selectors are true*/
+li.done{
+    color: seagreen;
+}
+
+
+/*Combining Combiners*/
+ul p.done{
+    font-size: 0.5rem;
+}
